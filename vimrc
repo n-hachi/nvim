@@ -31,4 +31,15 @@ if dein#check_install()
   call dein#install()
 endif
 
+function! s:source_rc(path, ...)
+  let use_global = get(a:000, 0, !has('vim_starting'))
+  let abspath = s:rc_dir . a:path
+  if !use_global
+    execute 'source' fnameescape(abspath)
+    return
+  endif
+endfunction
+
+
+call s:source_rc('options.rc.vim')
 
