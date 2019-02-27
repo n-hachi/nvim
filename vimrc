@@ -13,11 +13,13 @@ let &runtimepath = s:dein_repo_dir . "," . &runtimepath
 
 
 " Required:
-let s:rc_dir = fnamemodify(expand('<sfile>'),':h') . '/rc/'
+let s:rc_dir = fnamemodify(expand('<sfile>'),':h') . '/rc'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  let s:toml_file = s:rc_dir . '/dein.toml'
-  call dein#load_toml(s:toml_file)
+  let s:toml_file      = s:rc_dir . '/dein.toml'
+  let s:toml_lazy_file = s:rc_dir . '/dein_lazy.toml'
+  call dein#load_toml(s:toml_file,     {'lazy': 0})
+  call dein#load_toml(s:toml_lazy_file,{'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif
@@ -41,5 +43,5 @@ function! s:source_rc(path, ...)
 endfunction
 
 
-call s:source_rc('options.rc.vim')
+call s:source_rc('/options.rc.vim')
 
