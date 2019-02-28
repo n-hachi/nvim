@@ -1,6 +1,10 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-depends = ['neomru.vim']
+on_cmd = 'Denite'
+hook_add = '''
+    nnoremap <silent> ;r
+        \ :<C-u>Denite -buffer-name=register
+        \ register neoyank<CR>
+'''
 
-[[plugins]]
-repo      = 'Shougo/neomru.vim'
+
