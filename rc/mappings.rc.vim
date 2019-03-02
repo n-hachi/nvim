@@ -17,3 +17,5 @@ cnoremap <C-p>          <Up>
 cnoremap <C-y>          <C-r>*
 " <C-g>: Exit.
 cnoremap <C-g>          <C-c>
+" <C-l>: show history list
+cnoremap <C-l>          <C-f>
