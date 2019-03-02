@@ -13,3 +13,29 @@ hook_add = '''
 '''
 
 
+#
+# c/c++
+#
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+on_ft = ['c', 'cpp']
+hook_add = '''
+    let g:clang_format#code_style = "google"
+    let g:clang_format#style_options = {
+        \ "AccessModifierOffset" : -4,
+        \ "AllowShortIfStatementsOnASingleLine" : "true",
+        \ "AlwaysBreakTemplateDeclarations" : "true",
+        \ "Standard" : "C++11"}
+
+    " map to <Leader>cf in c/c++ code
+    autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+    autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+'''
+
+[[plugins]]
+repo = 'justmao945/vim-clang'
+on_ft = ['c', 'cpp']
+hook_add = '''
+    let g:clang_c_options = '-std=c11'
+    let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+'''
