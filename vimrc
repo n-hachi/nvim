@@ -44,4 +44,5 @@ endfunction
 
 
 call s:source_rc('/options.rc.vim')
+call s:source_rc('/mappings.rc.vim')
 
