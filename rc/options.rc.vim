@@ -16,3 +16,7 @@ set shiftround
 " Enable smart indent
 set autoindent smartindent
  
+" Show candidate
+set nowildmenu
+set wildmode=list:longest,full
+
