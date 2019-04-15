@@ -12,6 +12,32 @@ hook_add = '''
         \ register neoyank<CR>
 '''
 
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_source = '''
+let g:deoplete#enable_at_startup = 1
+'''
+on_i = 1
+
+[[plusing]]
+repo = 'Shougo/neosnippet.vim'
+hook_source = '''
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
+    if has('conceal')
+    set conceallevel=2 concealcursor=niv
+    endif
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
 
 #
 # c/c++
