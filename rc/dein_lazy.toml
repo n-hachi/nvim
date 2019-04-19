@@ -75,3 +75,7 @@ hook_add = '''
     nnoremap <C-n> :cn<CR>
     nnoremap <C-p> :cp<CR>
 '''
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
