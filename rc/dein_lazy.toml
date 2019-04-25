@@ -1,4 +1,28 @@
 [[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = 'neosnippet-snippets'
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
+hook_source = '''
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'
+hook_source = '''
+  let g:deoplete#enable_at_startup = 1
+  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+  \ neosnippet#expandable_or_jumpable() ?
+  \       "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+
+[[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_event = 'TextYankPost'
 on_source = ['denite.nvim']
@@ -11,33 +35,6 @@ hook_add = '''
         \ :<C-u>Denite -buffer-name=register
         \ register neoyank<CR>
 '''
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_source = '''
-let g:deoplete#enable_at_startup = 1
-'''
-on_i = 1
-
-[[plusing]]
-repo = 'Shougo/neosnippet.vim'
-hook_source = '''
-    imap <C-k> <Plug>(neosnippet_expand_or_jump)
-    smap <C-k> <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k> <Plug>(neosnippet_expand_target)
-    if has('conceal')
-    set conceallevel=2 concealcursor=niv
-    endif
-'''
-on_i  = 1
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
-
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
 
 #
 # c/c++
