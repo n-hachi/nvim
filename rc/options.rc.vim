@@ -20,3 +20,5 @@ set autoindent smartindent
 set nowildmenu
 set wildmode=list:longest,full
 
+" Show line number
+set number
