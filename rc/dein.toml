@@ -14,6 +14,9 @@ repo = 'vim-jp/vimdoc-ja'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
+repo = 'gregsexton/gitv'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
