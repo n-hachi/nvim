@@ -36,6 +36,10 @@ hook_add = '''
         \ register neoyank<CR>
 '''
 
+[[plugins]]
+repo = 'neoclide/denite-extra'
+on_source = ['denite.nvim']
+
 #
 # c/c++
 #
