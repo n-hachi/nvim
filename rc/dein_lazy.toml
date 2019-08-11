@@ -28,6 +28,10 @@ on_event = 'TextYankPost'
 on_source = ['denite.nvim']
 
 [[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['denite.nvim']
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_add = '''
