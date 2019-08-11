@@ -32,17 +32,18 @@ repo = 'Shougo/neomru.vim'
 on_source = ['denite.nvim']
 
 [[plugins]]
+repo = 'neoclide/denite-extra'
+on_source = ['denite.nvim']
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
+hook_source = 'source ~/.config/nvim/rc/denite.rc.vim'
 hook_add = '''
     nnoremap <silent> ;r
         \ :<C-u>Denite -buffer-name=register
         \ register neoyank<CR>
 '''
-
-[[plugins]]
-repo = 'neoclide/denite-extra'
-on_source = ['denite.nvim']
 
 #
 # c/c++
