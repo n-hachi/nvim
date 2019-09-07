@@ -22,3 +22,6 @@ set wildmode=list:longest,full
 
 " Show line number
 set number
+
+" Clipboard
+set clipboard+=unnamedplus
