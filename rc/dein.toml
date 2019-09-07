@@ -34,3 +34,6 @@ build = 'make'
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
