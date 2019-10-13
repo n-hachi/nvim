@@ -25,3 +25,6 @@ set number
 
 " Clipboard
 set clipboard+=unnamedplus
+
+" Not change window size when split or delete other window.
+set noequalalways
