@@ -21,6 +21,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  autocmd BufWinLeave * GitGutterAll
+'''
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'
