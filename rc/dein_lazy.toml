@@ -89,3 +89,11 @@ hook_add = '''
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+on_source = ['tabular']
+
+[[plugins]]
+repo = 'godlygeek/tabular'
