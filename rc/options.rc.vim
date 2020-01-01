@@ -4,6 +4,8 @@ set nobackup
 set noswapfile
 set backupdir-=.
 
+"" Default indent settings.
+"" If want to change according to filetype, edit dein_filetyle.toml.
 " Smart tab setting.
 set smarttab
 " Exchange tab to space.

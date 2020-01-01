@@ -11,22 +11,19 @@ if !isdirectory(s:dein_repo_dir)
 endif
 let &runtimepath = s:dein_repo_dir . "," . &runtimepath
 
-
-" Required:
 let s:rc_dir = fnamemodify(expand('<sfile>'),':h') . '/rc'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   let s:toml_file      = s:rc_dir . '/dein.toml'
+  let s:toml_filetype_file = s:rc_dir . '/dein_filetype.toml'
   let s:toml_lazy_file = s:rc_dir . '/dein_lazy.toml'
   call dein#load_toml(s:toml_file,     {'lazy': 0})
+  call dein#load_toml(s:toml_filetype_file)
   call dein#load_toml(s:toml_lazy_file,{'lazy': 1})
+
   call dein#end()
   call dein#save_state()
 endif
-
-" Required:
-filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
@@ -42,7 +39,8 @@ function! s:source_rc(path, ...)
   endif
 endfunction
 
-
 call s:source_rc('/options.rc.vim')
 call s:source_rc('/mappings.rc.vim')
 
+filetype plugin indent on
+syntax enable
