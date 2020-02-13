@@ -30,3 +30,6 @@ set clipboard+=unnamedplus
 
 " Not change window size when split or delete other window.
 set noequalalways
+
+" Delete tailing blanks.
+autocmd BufWritePre * :%s/\s\+$//ge
