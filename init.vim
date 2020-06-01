@@ -42,7 +42,7 @@ endfunction
 call s:source_rc('/options.rc.vim')
 call s:source_rc('/mappings.rc.vim')
 
-call dein#add('zchee/nvim-go', {'build': 'make'})
-
 filetype plugin indent on
 syntax enable
+
+" call dein#add('zchee/nvim-go', {'build': 'make'})

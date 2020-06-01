@@ -23,6 +23,10 @@ hook_source = '''
   call deoplete#custom#option({
   \ 'auto_complete_delay': 100,
   \ 'smart_case': v:true,
+  \ 'omni_patterns': {
+  \   'go': '[^. *\t]\.\w*',
+  \   'ruby': '[^. *\t]\.\w*',
+  \ },
   \ })
 '''
 
@@ -98,12 +102,17 @@ on_source = ['tabular']
 [[plugins]]
 repo = 'godlygeek/tabular'
 
-#
-# Golang
-#
 [[plugins]]
-repo = 'mattn/vim-goimports'
+repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
-    let g:goimports = 1
+    let g:go_fmt_command = 'goimports'
+    let g:go_def_mode='gopls'
+    let g:go_info_mode='gopls'
 '''
+
+[[plugins]]
+repo = 'deoplete-plugins/deoplete-go'
+on_ft = ['go']
+build = 'make'
+

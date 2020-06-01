@@ -69,3 +69,9 @@ repo = 'majutsushi/tagbar'
 
 [[plugins]]
 repo = 'mhinz/vim-signify'
+
+#[[plugins]]
+#repo = 'atozimu/LanguageClient-neovim'
+
+[[plugins]]
+repo = 'junegunn/fzf'
