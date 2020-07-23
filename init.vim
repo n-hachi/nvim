@@ -42,7 +42,19 @@ endfunction
 call s:source_rc('/options.rc.vim')
 call s:source_rc('/mappings.rc.vim')
 
+" Search project specific config file
+augroup vimrc-local
+  autocmd!
+  autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
+augroup END
+
+function! s:vimrc_local(loc)
+  let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
+  for i in reverse(filter(files, 'filereadable(v:val)'))
+    source `=i`
+  endfor
+endfunction
+
 filetype plugin indent on
 syntax enable
 
-" call dein#add('zchee/nvim-go', {'build': 'make'})
