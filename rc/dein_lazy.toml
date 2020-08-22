@@ -62,12 +62,6 @@ on_ft = ['c', 'cpp']
 hook_add = '''
     let g:clang_format#detect_style_file = 1
     let g:clang_format#auto_format = 1
-    let g:clang_format#code_style = "google"
-    let g:clang_format#style_options = {
-        \ "AccessModifierOffset" : -4,
-        \ "AllowShortIfStatementsOnASingleLine" : "true",
-        \ "AlwaysBreakTemplateDeclarations" : "true",
-        \ "Standard" : "C++11"}
 
     " map to <Leader>cf in c/c++ code
     autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
