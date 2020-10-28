@@ -12,11 +12,14 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+hook_add = '''
+    set shell=/bin/bash
+'''
 
 [[plugins]]
 repo = 'gregsexton/gitv'
 hook_add = '''
-  autocmd FileType git :setlocal foldlevel=99  
+  autocmd FileType git :setlocal foldlevel=99
 '''
 
 [[plugins]]
