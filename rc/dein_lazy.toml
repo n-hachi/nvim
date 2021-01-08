@@ -114,3 +114,12 @@ repo = 'deoplete-plugins/deoplete-go'
 on_ft = ['go']
 build = 'make'
 
+# Hatena blog
+# Reference: https://blog.tokoyax.com/entry/vim/hateblo
+[[plugins]]
+repo = 'iamcco/markdown-preview.nvim'
+on_ft = ['markdown', 'pandoc.markdown', 'rmd']
+build = 'sh -c "cd app && yarn install"'
+hook_add = '''
+    let g:mkdp_auto_close = 0
+'''
