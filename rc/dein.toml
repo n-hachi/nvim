@@ -51,7 +51,7 @@ hook_add = '''
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'dense-analysis/ale'
 hook_add = '''
     " nr2char(...) is for describing icons from devicons
     let g:ale_echo_msg_format = '%severity%  %linter% - %s'
