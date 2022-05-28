@@ -90,24 +90,11 @@ call defx#custom#column('mark', {
 call defx#custom#option('_', {
         \ 'columns': 'mark:indent:icon:filename:type:size:time',
         \ })
-call defx#custom#option('_', {
-        \ 'show_parent': v:true,
-        \ })
 function! Root(path) abort
     return fnamemodify(a:path, ':t')
 endfunction
-nnoremap <silent><buffer><expr> <CR>
-\ defx#is_binary() ?
-\ defx#do_action('execute_system') :
-\ defx#do_action('open')
-nnoremap <silent><buffer><expr> <CR>
-\ defx#is_directory() ?
-\ defx#do_action('open_directory') :
-\ defx#do_action('multi', ['drop', 'quit'])
 function! s:defx_my_settings() abort
     " Define mappings
-    nnoremap <silent><buffer><expr> <CR>
-    \ defx#do_action('open')
     nnoremap <silent><buffer><expr> c
     \ defx#do_action('copy')
     nnoremap <silent><buffer><expr> m
