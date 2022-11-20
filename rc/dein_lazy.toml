@@ -125,3 +125,13 @@ build = 'sh -c "cd app && yarn install"'
 hook_add = '''
     let g:mkdp_auto_close = 0
 '''
+
+[[plugins]]
+repo = 'mattn/vim-goimports'
+on_ft = ['go']
+hook_add = '''
+    " enable auto format when write (default)
+    let g:goimports = 1
+    " disable auto format. but :GoImportRun will work.
+    let g:goimports = 0
+'''
