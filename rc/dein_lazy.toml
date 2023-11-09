@@ -135,3 +135,6 @@ hook_add = '''
     " disable auto format. but :GoImportRun will work.
     let g:goimports = 0
 '''
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
